@@ -1,36 +1,54 @@
 console.log("Let's go !")
+let select = document.querySelector("select")
+
+select.addEventListener('change', (e)=>{
+    let maison = e.target.value;
+    console.log(maison);
+    loadData(maison);
+})
+
+document.addEventListener('DOMContentLoaded', function() {
+    const buttons = document.querySelectorAll('button');
+  
+    buttons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        let maison = e.target.value;
+        console.log(maison);
+        loadData(maison);
+      });
+    });
+  });
+
 let main = document.querySelector('main #characters');
 
-loadData();
-async function loadData() {
-    const response = await fetch('https://hp-api.onrender.com/api/characters');
+
+loadData(maison == "Gryffindor");
+
+async function loadData(maison) {
+  const response = await fetch('https://hp-api.onrender.com/api/characters');
   const Personnages = await response.json();
 
   const liste = Personnages.slice(0, 8);
   console.log(liste)
 
-  let compte = 0;
+
+
+  main.innerHTML="";
   for (const perso of liste) {
-    console.log(compte)
-    compte++;
-    
-    let article = document.createElement('article');
-
-    article.innerHTML = `
-        <td>
-            <figure>
-                <img src="${perso.image}" alt="${perso.name}" class="round-image">
-                <figcaption>${perso.name}</figcaption>
-            </figure>
-        </td>`;
-    if(compte == 3){
-        console.log("retour ligne")
-        article.innerHTML += `</tr>
-        <tr>`
-        compte=0;
-    }
+    if(perso.house == maison){ 
         
-    main.appendChild(article);
+        let article = document.createElement('article');
 
-    }
+        article.innerHTML = `
+
+                <figure>
+                    <img src="${perso.image}" alt="${perso.name}" class="round-image">
+                    <figcaption>${perso.name}</figcaption>
+                </figure>`
+
+
+        main.appendChild(article);
+
+        }
+  }
 }
