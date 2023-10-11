@@ -105,7 +105,6 @@ footer{
     color: white;
     text-align: center;
     padding: 40px;
-    position: fixed;
     bottom: 0;
     width: 100%;
 }
@@ -117,3 +116,25 @@ hr {
     margin: 0 auto; 
     padding-bottom: 30px;
   }
+
+.detail_table{
+    background-color: var(--yellow) ;
+    padding:50px;
+}
+
+.detail_table table{
+    margin: auto;
+}
+
+.detail_table td{
+    padding: 20px;
+}
+.detail_table img{
+    width: 300px;
+}
+
+.logo_classe{
+    display: block;
+    margin:auto;
+    padding: 30px;
+}
