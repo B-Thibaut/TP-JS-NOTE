@@ -8,6 +8,24 @@
     --yellow : #E1B50C;
 }
 
+header img{
+    width: 91.398px;
+    height: 100px;
+    flex-shrink: 0;
+    float: left; 
+}
+
+header td{
+    padding-right: 100px;
+}
+
+header{
+    position: static;
+    padding-bottom: 20px;
+    max-width: 1024px;
+    margin:auto;
+}
+
 @font-face {
     font-family: 'Rubik';
     src: url("./../font/Rubik-Regular.ttf");
@@ -33,8 +51,69 @@ main{
     background-color: var(--light) ;
     max-width: 1024px;
     margin:auto;
+    margin-top: 20px;
 }
+
+main h1,h2{
+    text-align: center;
+    padding: 20px;
+}
+
+.house table{
+    background-color: var(--yellow) ;
+}
+.house td{
+    padding:30px;
+}
+
+.house table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.characters table{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+td {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+td img{
+    width: 121px;
+}
+
+.round-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid black;
+  }
+
+  figcaption{
+    text-align: center;
+    margin-bottom: 50px;
+  }
 
 footer{
     background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
+
+hr {
+    border: 0;
+    border-top: 2px solid black;
+    width: 75%; 
+    margin: 0 auto; 
+    padding-bottom: 30px;
+  }
